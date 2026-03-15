@@ -1,406 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniScriptHub | Premium Resources</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #8b5cf6;
-            --primary-hover: #7c3aed;
-            --bg: #030712;
-            --card-bg: rgba(13, 18, 30, 0.95);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent: #10b981;
-            --leaked: #f59e0b;
-            --radius-lg: 24px;
-            --radius-md: 12px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniScriptHub | Premium Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--primary:#8b5cf6;
+--primary-hover:#7c3aed;
+--bg:#030712;
+--card-bg:rgba(13,18,30,0.95);
+--card-border:rgba(255,255,255,0.08);
+--text-main:#f8fafc;
+--text-dim:#94a3b8;
+--accent:#10b981;
+--leaked:#f59e0b;
+--radius-lg:24px;
+--radius-md:12px;
+--transition:all .3s cubic-bezier(.4,0,.2,1)
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+*{box-sizing:border-box;margin:0;padding:0}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
-            background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-        }
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background-color:var(--bg);
+background-image:radial-gradient(circle at 50% 0%,rgba(139,92,246,.12) 0%,transparent 60%);
+color:var(--text-main);
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+overflow-x:hidden
+}
 
-        .navbar {
-            width: 100%;
-            max-width: 1200px;
-            padding: 30px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.navbar{
+width:100%;
+max-width:1200px;
+padding:30px 24px;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: #fff;
-            letter-spacing: -0.5px;
-        }
+.logo{
+font-weight:800;
+font-size:1.5rem;
+text-decoration:none;
+color:#fff;
+letter-spacing:-.5px
+}
 
-        .logo span {
-            color: var(--primary);
-        }
+.logo span{color:var(--primary)}
 
-        .nav-tabs {
-            display: flex;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 6px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--card-border);
-        }
+.nav-tabs{
+display:flex;
+gap:8px;
+background:rgba(255,255,255,.03);
+padding:6px;
+border-radius:var(--radius-md);
+border:1px solid var(--card-border)
+}
 
-        .tab {
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-        }
+.tab{
+padding:10px 20px;
+border-radius:8px;
+text-decoration:none;
+color:var(--text-dim);
+font-size:.9rem;
+font-weight:700;
+cursor:pointer;
+transition:var(--transition)
+}
 
-        .tab.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
+.tab.active{
+background:var(--primary);
+color:white;
+box-shadow:0 4px 12px rgba(139,92,246,.3)
+}
 
-        .tab:hover:not(.active) {
-            color: white;
-            background: rgba(255, 255, 255, 0.08);
-        }
+.tab:hover:not(.active){
+color:white;
+background:rgba(255,255,255,.08)
+}
 
-        .main-container {
-            max-width: 1200px;
-            width: 100%;
-            padding: 0 24px 80px;
-            flex-grow: 1;
-        }
+.main-container{
+max-width:1200px;
+width:100%;
+padding:0 24px 80px;
+flex-grow:1
+}
 
-        .view-section {
-            display: none;
-            animation: fadeIn 0.4s ease forwards;
-        }
+.view-section{display:none}
+.view-section.active{display:block}
 
-        .view-section.active {
-            display: block;
-        }
+.section-header{
+margin-bottom:30px;
+font-weight:800;
+font-size:2rem;
+letter-spacing:-.5px
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.showcase-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+gap:30px
+}
 
-        .section-header {
-            margin-bottom: 30px;
-            font-weight: 800;
-            font-size: 2rem;
-            letter-spacing: -0.5px;
-        }
+.showcase-item{
+background:var(--card-bg);
+border-radius:var(--radius-lg);
+border:1px solid var(--card-border);
+overflow:hidden;
+cursor:pointer;
+transition:var(--transition);
+display:flex;
+flex-direction:column
+}
 
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
+.showcase-item:hover{
+transform:translateY(-8px);
+border-color:var(--primary);
+box-shadow:0 20px 40px rgba(0,0,0,.5)
+}
 
-        .showcase-item {
-            background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--card-border);
-            overflow: hidden;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
+.showcase-img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-bottom:1px solid var(--card-border)
+}
 
-        .showcase-item:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.1);
-        }
+.showcase-info{
+padding:24px;
+flex-grow:1;
+display:flex;
+flex-direction:column
+}
 
-        .showcase-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--card-border);
-        }
+.badge-container{
+display:flex;
+gap:8px;
+margin-bottom:12px
+}
 
-        .showcase-info {
-            padding: 24px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.showcase-title{
+margin:0 0 10px 0;
+font-size:1.25rem;
+font-weight:700
+}
 
-        .badge-container {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
+.showcase-desc{
+color:var(--text-dim);
+font-size:.9rem;
+line-height:1.5
+}
 
-        .showcase-title {
-            margin: 0 0 10px 0;
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
+.script-card{
+background:var(--card-bg);
+border:1px solid var(--card-border);
+border-radius:var(--radius-lg);
+overflow:hidden;
+max-width:900px;
+margin:0 auto
+}
 
-        .showcase-desc {
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin: 0;
-        }
+.banner-container{
+width:100%;
+height:300px;
+position:relative
+}
 
-        .script-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8);
-            max-width: 900px;
-            margin: 0 auto;
-        }
+.banner-img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.6)
+}
 
-        .banner-container {
-            width: 100%;
-            height: 300px;
-            position: relative;
-        }
+.banner-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:30px;
+background:linear-gradient(to top,var(--card-bg) 10%,transparent);
+display:flex;
+gap:10px
+}
 
-        .banner-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6);
-        }
+.script-content{padding:40px}
 
-        .banner-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px;
-            background: linear-gradient(to top, var(--card-bg) 10%, transparent);
-            display: flex;
-            align-items: flex-end;
-            gap: 10px;
-        }
+.script-title{
+font-size:2.5rem;
+margin-bottom:8px;
+font-weight:800
+}
 
-        .script-content {
-            padding: 40px;
-        }
+.script-subtitle{
+color:var(--text-dim);
+font-size:1.1rem;
+margin-bottom:30px
+}
 
-        .script-title {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
+.badge{
+padding:6px 12px;
+border-radius:6px;
+font-size:.7rem;
+font-weight:800;
+text-transform:uppercase
+}
 
-        .script-subtitle {
-            color: var(--text-dim);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
+.badge-verified{
+background:rgba(16,185,129,.15);
+color:var(--accent);
+border:1px solid rgba(16,185,129,.3)
+}
 
-        .badge {
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .badge-verified {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-        .badge-leaked {
-            background: rgba(245, 158, 11, 0.15);
-            color: var(--leaked);
-            border: 1px solid rgba(245, 158, 11, 0.3);
-        }
+.badge-leaked{
+background:rgba(245,158,11,.15);
+color:var(--leaked);
+border:1px solid rgba(245,158,11,.3)
+}
 
-        .code-window {
-            background: #000;
-            border-radius: 16px;
-            border: 1px solid var(--card-border);
-            margin: 0 0 30px 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
+.code-window{
+background:#000;
+border-radius:16px;
+border:1px solid var(--card-border);
+margin-bottom:30px;
+overflow:hidden
+}
 
-        .code-header {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 14px 20px;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid var(--card-border);
-        }
+.code-header{
+background:rgba(255,255,255,.03);
+padding:14px 20px;
+display:flex;
+align-items:center
+}
 
-        .mac-dots {
-            display: flex;
-            gap: 8px;
-        }
+.mac-dots{display:flex;gap:8px}
 
-        .dot { width: 12px; height: 12px; border-radius: 50%; opacity: 0.8; }
-        .dot-red { background: #ff5f56; } 
-        .dot-yellow { background: #ffbd2e; } 
-        .dot-green { background: #27c93f; }
+.dot{width:12px;height:12px;border-radius:50%}
+.dot-red{background:#ff5f56}
+.dot-yellow{background:#ffbd2e}
+.dot-green{background:#27c93f}
 
-        .code-lang {
-            margin-left: auto;
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
+.code-lang{
+margin-left:auto;
+font-size:.7rem;
+color:var(--text-dim);
+font-weight:800
+}
 
-        .code-scroll-area {
-            max-height: 400px;
-            overflow-x: auto;
-            overflow-y: auto;
-        }
+pre{
+margin:0;
+padding:24px;
+color:#a78bfa;
+font-family:monospace;
+font-size:.95rem
+}
 
-        pre {
-            margin: 0;
-            padding: 24px;
-            color: #a78bfa;
-            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+.btn{
+border:none;
+cursor:pointer;
+font-family:inherit
+}
 
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+.btn-copy{
+width:100%;
+padding:20px;
+border-radius:16px;
+font-weight:800;
+background:var(--primary);
+color:white
+}
 
-        .btn {
-            border: none;
-            outline: none;
-            cursor: pointer;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .btn-copy {
-            width: 100%;
-            padding: 20px;
-            border-radius: 16px;
-            font-size: 1rem;
-            font-weight: 800;
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
-        }
-
-        .btn-copy:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-back {
-            background: transparent;
-            color: var(--text-dim);
-            padding: 12px 0;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-back:hover {
-            color: white;
-            transform: translateX(-4px);
-        }
-
-        footer {
-            text-align: center;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            margin-top: 40px;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
-    </style>
+footer{
+text-align:center;
+color:var(--text-dim);
+font-size:.8rem;
+margin-top:40px
+}
+</style>
 </head>
+
 <body>
 
-    <header class="navbar">
-        <a href="#" class="logo" data-target="home-section">Uni<span>Script</span>Hub</a>
-        <nav class="nav-tabs">
-            <a href="#" class="tab active nav-link" data-target="home-section">Home</a>
-            <a href="https://discord.gg/madrbXndpQ" target="_blank" class="tab">Discord</a>
-        </nav>
-    </header>
+<header class="navbar">
+<a href="#" class="logo nav-link" data-target="home-section">Uni<span>Script</span>Hub</a>
+<nav class="nav-tabs">
+<a href="#" class="tab active nav-link" data-target="home-section">Home</a>
+<a href="https://discord.gg/madrbXndpQ" target="_blank" class="tab">Discord</a>
+</nav>
+</header>
 
-    <main class="main-container">
-        
-        <section id="home-section" class="view-section active">
-            <h2 class="section-header">Featured Scripts</h2>
-            <div class="showcase-grid">
-                
-                <article class="showcase-item script-trigger" data-target="script-page">
-                    <img src="https://preview.redd.it/gag-sab-and-99-nights-in-the-forest-are-the-worst-roblox-v0-4vsllelfpkkf1.jpg?width=640&crop=smart&auto=webp&s=df9c3a7b2210d7015654d13708906e60e47559cb" alt="Banner" class="showcase-img">
-                    <div class="showcase-info">
-                        <div class="badge-container">
-                            <span class="badge badge-verified">Verified</span>
-                        </div>
-                        <h3 class="showcase-title">Undetected Paid Brainrot Duplicator</h3>
-                        <p class="showcase-desc">The ultimate solution for duplicating your brainrots. Exclusive leak, working as of 2026.</p>
-                    </div>
-                </article>
+<main class="main-container">
 
-            </div>
-        </section>
+<section id="home-section" class="view-section active">
+<h2 class="section-header">Featured Scripts</h2>
 
-        <section id="script-page" class="view-section">
-            <button class="btn btn-back nav-link" data-target="home-section">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Back to Scripts
-            </button>
-            
-            <div class="script-card">
-                <div class="banner-container">
-                    <img src="https://preview.redd.it/gag-sab-and-99-nights-in-the-forest-are-the-worst-roblox-v0-4vsllelfpkkf1.jpg?width=640&crop=smart&auto=webp&s=df9c3a7b2210d7015654d13708906e60e47559cb" alt="Banner Detail" class="banner-img">
-                    <div class="banner-overlay">
-                        <span class="badge badge-verified">Verified</span>
-                        <span class="badge badge-leaked">Leaked Source</span>
-                    </div>
-                </div>
-                
-                <div class="script-content">
-                    <h1 class="script-title">Undetected Paid Duplicator</h1>
-                    <p class="script-subtitle">Steal a Brainrot Exclusive Repository</p>
+<div class="showcase-grid">
 
-                    <div class="code-window
+<article class="showcase-item" data-target="script-page">
+<img src="https://preview.redd.it/gag-sab-and-99-nights-in-the-forest-are-the-worst-roblox-v0-4vsllelfpkkf1.jpg?width=640&crop=smart&auto=webp&s=df9c3a7b2210d7015654d13708906e60e47559cb" class="showcase-img">
+<div class="showcase-info">
+<div class="badge-container">
+<span class="badge badge-verified">Verified</span>
+</div>
+<h3 class="showcase-title">Undetected Paid Brainrot Duplicator</h3>
+<p class="showcase-desc">Exclusive working leak.</p>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="script-page" class="view-section">
+
+<button class="btn nav-link" data-target="home-section">Back</button>
+
+<div class="script-card">
+
+<div class="banner-container">
+<img src="https://preview.redd.it/gag-sab-and-99-nights-in-the-forest-are-the-worst-roblox-v0-4vsllelfpkkf1.jpg?width=640&crop=smart&auto=webp&s=df9c3a7b2210d7015654d13708906e60e47559cb" class="banner-img">
+<div class="banner-overlay">
+<span class="badge badge-verified">Verified</span>
+<span class="badge badge-leaked">Leaked Source</span>
+</div>
+</div>
+
+<div class="script-content">
+
+<h1 class="script-title">Undetected Paid Duplicator</h1>
+<p class="script-subtitle">Steal a Brainrot Exclusive Repository</p>
+
+<div class="code-window">
+<div class="code-header">
+<div class="mac-dots">
+<div class="dot dot-red"></div>
+<div class="dot dot-yellow"></div>
+<div class="dot dot-green"></div>
+</div>
+<span class="code-lang">LUA SOURCE</span>
+</div>
+
+<pre id="scriptText">loadstring(game:HttpGet("https://example.com/script.lua"))()</pre>
+
+</div>
+
+<button class="btn btn-copy" id="copyBtn">Copy Script</button>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>Enforcing Quality Since 2026</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+
+const views=document.querySelectorAll('.view-section')
+const links=document.querySelectorAll('[data-target]')
+
+function switchView(id){
+views.forEach(v=>v.classList.remove('active'))
+document.getElementById(id).classList.add('active')
+window.scrollTo({top:0,behavior:'smooth'})
+}
+
+links.forEach(link=>{
+link.addEventListener('click',e=>{
+e.preventDefault()
+const target=link.getAttribute('data-target')
+if(target)switchView(target)
+})
+})
+
+const btn=document.getElementById('copyBtn')
+const text=document.getElementById('scriptText')
+
+btn.onclick=async()=>{
+await navigator.clipboard.writeText(text.innerText)
+btn.innerText="Copied ✓"
+setTimeout(()=>btn.innerText="Copy Script",2000)
+}
+
+})
+</script>
+
+</body>
+</html>
